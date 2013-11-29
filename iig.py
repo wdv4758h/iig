@@ -2,7 +2,7 @@
 
 """this is process to generate index.html with images."""
 
-from os import getcwd, walk
+from os import walk
 import re
 
 try:
@@ -20,20 +20,7 @@ except:
     import sys
     sys.exit(1)
 
-pwd = getcwd()
+from jinja2 import Template
+template = Template(open("template.html", "r").read())
 
-webpage = "<head>\n"
-webpage += "<title>Generated Image Page</title>\n"
-webpage += """<style type="text/css">
-                img {
-                    height: auto;
-                    width: auto;
-                    max-width: 100%;
-                }
-                </style>\n"""
-webpage += "</head>\n"
-
-for i in files:
-    webpage += "<div><img src=\"%s/%s\" /></div>\n<br/>\n" % (pwd, i)
-
-open("index.html", "w").write(webpage)
+open("index.html", "w").write(template.render(images=files))
