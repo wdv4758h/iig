@@ -10,3 +10,7 @@
 
     * add generated date to index.html
     * get the directory modify time
+
+## barnch
+
+- [a version that use jinja2](https://github.com/wdv4758h/iig/tree/template)
