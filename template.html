@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <title>Generated Image Page</title>
+    <style type="text/css">
+      img {
+          height: auto;
+          width: auto;
+          max-width: 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+  {%- for image in images %}
+    <img src="{{ image }}" />
+    <br/>
+  {%- endfor %}
+  </body>
+</html>
